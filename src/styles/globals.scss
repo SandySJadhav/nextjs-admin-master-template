@@ -53,12 +53,12 @@ body {
 
 .sidebar-open {
     margin-left: 288px;
-    transition: all 1s;
+    transition: margin-left 1s;
     transform: translate3d(0, 0, 0);
 }
 
 .sidebar-close {
     margin-left: 0px;
-    transition: all 1s;
+    transition: margin-left 1s;
     transform: translate3d(0, 0, 0);
 }
