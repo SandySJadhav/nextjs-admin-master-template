@@ -84,14 +84,14 @@ const Header = ({ panel, toggleSidePanel }) => {
           </IconButton>
 
           {userPanel ? (
-            <div className="absolute right-2 z-20 mt-16 w-52 origin-top-right rounded-md bg-white dark:bg-base py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
+            <div className="absolute right-2 z-20 p-4 mt-16 w-52 origin-top-right rounded-md bg-white dark:bg-base py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
               <UserProfile />
             </div>
           ) : null}
 
           {settingsPanel ? (
-            <div className="absolute right-16 z-20 mt-16 w-52 origin-top-right rounded-md bg-white dark:bg-base py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
-              User Settings
+            <div className="absolute right-16 z-20 p-4 mt-16 w-52 origin-top-right rounded-md bg-white dark:bg-base py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
+              <div className="p-4">User Settings</div>
             </div>
           ) : null}
         </div>
