@@ -1,9 +1,11 @@
-import Image from "next/image";
 import React from "react";
+import Image from "next/image";
 import { HiOutlineMenu } from "react-icons/hi";
 import IconButton from "./IconButton";
+import SidePanelItem from "./SidePanelItem";
+import { MENUS } from "@constants/SidePanel";
 
-const SidePanel = ({ panel, toggleSidePanel }) => {
+const SidePanel = ({ toggleSidePanel }) => {
   return (
     <nav className="flex flex-col w-72 absolute h-screen dark:bg-base p-2 bg-sidebar shadow-md">
       <div className="flex justify-end">
@@ -21,6 +23,9 @@ const SidePanel = ({ panel, toggleSidePanel }) => {
         />
         <div>Sandip Jadhav</div>
       </div>
+      {MENUS.map((menu) => (
+        <SidePanelItem key={menu.label} icon={menu.icon} label={menu.label} />
+      ))}
     </nav>
   );
 };
