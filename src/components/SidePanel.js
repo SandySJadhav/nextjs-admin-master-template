@@ -4,6 +4,7 @@ import { HiOutlineMenu } from "react-icons/hi";
 import IconButton from "./IconButton";
 import SidePanelItem from "./SidePanelItem";
 import { MENUS } from "@constants/SidePanel";
+import UserProfile from "./UserProfile";
 
 const SidePanel = ({ toggleSidePanel }) => {
   return (
@@ -13,16 +14,7 @@ const SidePanel = ({ toggleSidePanel }) => {
           <HiOutlineMenu />
         </IconButton>
       </div>
-      <div className="grid justify-items-center">
-        <Image
-          className="rounded-full border-8 border-base dark:border-black"
-          height={100}
-          width={100}
-          src="/1605610886733.jpg"
-          alt="profile"
-        />
-        <div>Sandip Jadhav</div>
-      </div>
+      <UserProfile />
       {MENUS.map((menu) => (
         <SidePanelItem key={menu.label} icon={menu.icon} label={menu.label} />
       ))}

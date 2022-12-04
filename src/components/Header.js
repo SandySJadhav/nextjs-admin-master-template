@@ -1,3 +1,4 @@
+import Image from "next/image";
 import React, { useState } from "react";
 import {
   HiSun,
@@ -8,9 +9,13 @@ import {
   HiSearch,
 } from "react-icons/hi";
 import IconButton from "./IconButton";
+import Overlay from "./Overlay";
+import UserProfile from "./UserProfile";
 
 const Header = ({ panel, toggleSidePanel }) => {
   const [theme, setTheme] = useState("light");
+  const [userPanel, showUserPanel] = useState(false);
+  const [settingsPanel, showSettingsPanel] = useState(false);
 
   const toggleTheme = () => {
     if (theme === "dark") {
@@ -20,6 +25,22 @@ const Header = ({ panel, toggleSidePanel }) => {
       document.documentElement.classList.add("dark");
       setTheme("dark");
     }
+  };
+
+  const removePanels = () => {
+    if (userPanel) {
+      showUserPanel(!userPanel);
+    } else if (settingsPanel) {
+      showSettingsPanel(!settingsPanel);
+    }
+  };
+
+  const toggleUserPanel = () => {
+    showUserPanel(!userPanel);
+  };
+
+  const toggleSettingsPanel = () => {
+    showSettingsPanel(!settingsPanel);
   };
 
   return (
@@ -48,21 +69,34 @@ const Header = ({ panel, toggleSidePanel }) => {
           </div>
         </div>
         <div className="flex">
-          <IconButton onClick={toggleTheme}>
+          <IconButton onClick={toggleTheme} className="mr-1">
             {theme !== "dark" ? (
               <HiMoon className="h-4 w-4" />
             ) : (
               <HiSun className="h-4 w-4" />
             )}
           </IconButton>
-          <IconButton>
+          <IconButton className="mr-1" onClick={toggleSettingsPanel}>
             <HiOutlineCog />
           </IconButton>
-          <IconButton>
+          <IconButton className="mr-1" onClick={toggleUserPanel}>
             <HiUser />
           </IconButton>
+
+          {userPanel ? (
+            <div className="absolute right-2 z-20 mt-16 w-52 origin-top-right rounded-md bg-white dark:bg-base py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
+              <UserProfile />
+            </div>
+          ) : null}
+
+          {settingsPanel ? (
+            <div className="absolute right-16 z-20 mt-16 w-52 origin-top-right rounded-md bg-white dark:bg-base py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
+              User Settings
+            </div>
+          ) : null}
         </div>
       </nav>
+      {userPanel || settingsPanel ? <Overlay onClick={removePanels} /> : null}
     </header>
   );
 };
