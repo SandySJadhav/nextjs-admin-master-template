@@ -10,6 +10,7 @@ import {
 } from "react-icons/hi";
 import IconButton from "./IconButton";
 import Overlay from "./Overlay";
+import Panel from "./Panel";
 import UserProfile from "./UserProfile";
 
 const Header = ({ panel, toggleSidePanel }) => {
@@ -84,15 +85,15 @@ const Header = ({ panel, toggleSidePanel }) => {
           </IconButton>
 
           {userPanel ? (
-            <div className="absolute right-2 z-20 p-4 mt-16 w-52 origin-top-right rounded-md bg-white dark:bg-base py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
+            <Panel className="right-2">
               <UserProfile />
-            </div>
+            </Panel>
           ) : null}
 
           {settingsPanel ? (
-            <div className="absolute right-16 z-20 p-4 mt-16 w-52 origin-top-right rounded-md bg-white dark:bg-base py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
+            <Panel className="right-16">
               <div className="p-4">User Settings</div>
-            </div>
+            </Panel>
           ) : null}
         </div>
       </nav>
