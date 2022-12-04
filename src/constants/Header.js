@@ -1,1 +1,0 @@
-const NAV_MENUS = [];

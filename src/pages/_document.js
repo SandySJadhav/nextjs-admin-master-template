@@ -3,7 +3,7 @@ import Document, { Html, Head, Main, NextScript } from "next/document";
 class MyDocument extends Document {
   render() {
     return (
-      <Html lang="en-US" class="light">
+      <Html lang="en-US" className="light">
         <Head>
           <link rel="apple-touch-icon" href="/fevicon.ico" />
         </Head>
