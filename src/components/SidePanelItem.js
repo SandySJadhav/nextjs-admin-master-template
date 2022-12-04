@@ -1,12 +1,44 @@
 import React from "react";
+import classNames from "classnames";
+import Link from "next/link";
 
-const SidePanelItem = ({ icon, label }) => {
+const Item = ({ menu }) => {
+  if (menu.url) {
+    return (
+      <Link
+        href={menu.url}
+        className={classNames("flex w-52", {
+          "pl-16": !menu.icon,
+        })}
+      >
+        {menu.icon ? <span className="p-2">{menu.icon}</span> : null}
+        <span className="p-2">{menu.label}</span>
+      </Link>
+    );
+  }
   return (
-    <div className="grid justify-items-center mt-4 cursor-pointer hover:text-base dark:hover:text-white">
-      <div className="flex">
-        <span className="p-2">{icon}</span>
-        <span className="p-2">{label}</span>
-      </div>
+    <a
+      className={classNames("flex w-52", {
+        "pl-16": !menu.icon,
+      })}
+    >
+      {menu.icon ? <span className="p-2">{menu.icon}</span> : null}
+      <span className="p-2">{menu.label}</span>
+    </a>
+  );
+};
+
+const SidePanelItem = ({ menu }) => {
+  return (
+    <div
+      className={classNames("grid justify-items-center", {
+        "hover:text-primary cursor-pointer": !menu.items,
+      })}
+    >
+      <Item menu={menu} />
+      {menu.items?.map((item) => (
+        <SidePanelItem key={item.label} menu={item} />
+      ))}
     </div>
   );
 };

@@ -8,6 +8,7 @@ const UserProfile = () => {
         className="rounded-full border-8 border-base dark:border-black"
         height={100}
         width={100}
+        priority={false}
         src="/1605610886733.jpg"
         alt="profile"
       />
