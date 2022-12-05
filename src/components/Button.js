@@ -18,18 +18,18 @@ const Button = ({ children, className, variant, ...props }) => {
     "transition",
     "ease-in-out",
     "duration-150",
-    "px-4 py-4",
+    "p-4",
     {
-      "bg-primary text-white border": primary,
+      "bg-primary text-white": primary,
     },
     {
       "bg-white text-primary border": secondary,
     },
     {
-      "bg-danger text-white border": danger,
+      "bg-danger text-white": danger,
     },
     {
-      "text-primary bg-white border-none hover:shadow-none hover:underline":
+      "text-primary dark:bg-base bg-white border-none hover:shadow-none hover:underline":
         link,
     },
     className

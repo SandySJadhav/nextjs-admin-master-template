@@ -18,33 +18,33 @@ const buttons = () => {
 
         <div className="p-2 mt-6">Icon Normal Buttons</div>
         <div className="flex flex-row gap-6">
-          <IconButton variant="primary" type="button">
-            <HiHome className="h-6 w-6" />
+          <IconButton variant="primary">
+            <HiHome className="h-6 w-6 text-white" />
           </IconButton>
-          <IconButton variant="secondary" type="button">
-            <HiZoomIn className="h-6 w-6" />
+          <IconButton variant="secondary">
+            <HiZoomIn className="h-6 w-6 text-base" />
           </IconButton>
-          <IconButton variant="danger" type="button">
-            <HiTrash className="h-6 w-6" />
+          <IconButton variant="danger">
+            <HiTrash className="h-6 w-6 text-white" />
           </IconButton>
-          <IconButton variant="link" type="button">
-            <HiZoomOut className="h-6 w-6" />
+          <IconButton variant="link">
+            <HiZoomOut className="h-6 w-6 text-primary" />
           </IconButton>
         </div>
 
         <div className="p-2 mt-6">Icon Rounded Buttons</div>
         <div className="flex flex-row gap-6">
-          <IconButton variant="primary">
-            <HiHome className="h-6 w-6" />
+          <IconButton variant="primary" rounded={true}>
+            <HiHome className="h-6 w-6 text-white" />
           </IconButton>
-          <IconButton variant="secondary">
-            <HiZoomIn className="h-6 w-6" />
+          <IconButton variant="secondary" rounded={true}>
+            <HiZoomIn className="h-6 w-6 text-base" />
           </IconButton>
-          <IconButton variant="danger">
-            <HiTrash className="h-6 w-6" />
+          <IconButton variant="danger" rounded={true}>
+            <HiTrash className="h-6 w-6 text-white" />
           </IconButton>
-          <IconButton variant="link">
-            <HiZoomOut className="h-6 w-6" />
+          <IconButton variant="link" rounded={true}>
+            <HiZoomOut className="h-6 w-6 text-primary" />
           </IconButton>
         </div>
       </div>
