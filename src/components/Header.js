@@ -71,9 +71,9 @@ const Header = ({ panel, toggleSidePanel }) => {
         <div className="flex">
           <IconButton onClick={toggleTheme} className="mr-1">
             {theme !== "dark" ? (
-              <HiMoon className="h-4 w-4" />
+              <HiMoon className="h-4 w-4 text-primary" />
             ) : (
-              <HiSun className="h-4 w-4" />
+              <HiSun className="h-4 w-4 text-yellow-500" />
             )}
           </IconButton>
           <IconButton className="mr-1" onClick={toggleSettingsPanel}>
