@@ -7,9 +7,9 @@ import { HiHome, HiTrash, HiZoomIn, HiZoomOut } from "react-icons/hi";
 const buttons = () => {
   return (
     <Layout>
-      <div className="block bg-white dark:bg-base p-4">
+      <div className="block bg-white dark:bg-base p-4 sm:w-full">
         <div className="p-2">Buttons</div>
-        <div className="flex flex-row gap-6">
+        <div className="flex flex-row flex-wrap gap-6">
           <Button variant="primary">Primary</Button>
           <Button variant="secondary">Secondary</Button>
           <Button variant="danger">Danger</Button>

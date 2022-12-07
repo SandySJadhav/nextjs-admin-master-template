@@ -62,3 +62,14 @@ body {
     transition: margin-left 1s;
     transform: translate3d(0, 0, 0);
 }
+
+.form-title {
+    letter-spacing: 0.02em;
+    font-weight: 900;
+}
+
+.checkbox-label {
+    letter-spacing: 0.02em;
+    font-weight: 400;
+    font-size: 12px;
+}
