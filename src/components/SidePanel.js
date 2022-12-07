@@ -7,7 +7,7 @@ import UserProfile from "./UserProfile";
 
 const SidePanel = ({ toggleSidePanel }) => {
   return (
-    <nav className="flex flex-col w-72 absolute h-screen dark:bg-base p-2 bg-sidebar shadow-md">
+    <nav className="flex flex-col w-72 h-screen dark:bg-base p-2 bg-sidebar shadow-md fixed">
       <div className="flex justify-end">
         <IconButton
           onClick={toggleSidePanel}
